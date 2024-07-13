@@ -1,0 +1,43 @@
+/* src/components/lobby/Lobby.css */
+
+.lobby-container {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 60px;
+    padding: 20px 10px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333333;
+    text-align: center;
+}
+
+.code-block-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.code-block-list li {
+    margin-bottom: 10px;
+}
+
+.code-block-link {
+    display: block;
+    padding: 16px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333333;
+    transition: background-color 0.3s ease;
+}
+
+.code-block-link:hover {
+    background-color: #e0e0e0;
+}
