@@ -11,7 +11,7 @@ FRONTEND_URL = os.environ.get('URL_FRONTEND')
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app']
 
 
 INSTALLED_APPS = [
@@ -38,7 +38,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOWED_ORIGINS = [FRONTEND_URL]
+CORS_ALLOWED_ORIGINS = []
 
 
 CHANNEL_LAYERS = {
