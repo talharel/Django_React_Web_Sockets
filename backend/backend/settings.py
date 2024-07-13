@@ -6,8 +6,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-SECRET_KEY = os.environ.get('SECRET_KEY')
-FRONTEND_URL = os.environ.get('URL_FRONTEND')
+SECRET_KEY = 'django-insecure-8mcxo9tpab*rj$*pa6q2jx!9i&lv56w-eskv!8)q6y^0jiuv!%'
+
 
 DEBUG = True
 
