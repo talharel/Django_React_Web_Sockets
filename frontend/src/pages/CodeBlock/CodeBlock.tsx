@@ -39,7 +39,7 @@ function CodeBlock() {
   }, [id]);
 
   useEffect(() => {
-    const socket = new WebSocket(`ws://${backendDomainAndPort}/ws/chat/${id}/`);
+    const socket = new WebSocket(`wss://${backendDomainAndPort}/ws/chat/${id}/`);
     socketRef.current = socket;
 
     socket.onopen = () => {
