@@ -10,7 +10,7 @@ SECRET_KEY = 'django-insecure-8mcxo9tpab*rj$*pa6q2jx!9i&lv56w-eskv!8)q6y^0jiuv!%
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
 
 
 INSTALLED_APPS = [
@@ -38,7 +38,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOWED_ORIGINS = ['*.vercel.app','https://mv-project-k7sx5yjgn-talharels-projects.vercel.app/']
+CORS_ALLOWED_ORIGINS = ['https://*.vercel.app']
 
 
 CHANNEL_LAYERS = {
@@ -66,7 +66,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'backend.wsgi.application'
+WSGI_APPLICATION = 'backend.wsgi.app'
 
 ASGI_APPLICATION = 'backend.asgi.application'
 
@@ -105,6 +105,5 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
