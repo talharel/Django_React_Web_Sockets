@@ -42,6 +42,9 @@ application = ProtocolTypeRouter({
     'http': get_asgi_application(),
     'websocket': URLRouter([
         re_path(r'ws/chat/(?P<id>[0-9]+)',ChatConsumer.as_asgi())
+        re_path(r'ws/chat/1',ChatConsumer.as_asgi()),
+        re_path('ws/chat/1',ChatConsumer.as_asgi()),
+        re_path('ws/',ChatConsumer.as_asgi()),
     ]),
 })
 
