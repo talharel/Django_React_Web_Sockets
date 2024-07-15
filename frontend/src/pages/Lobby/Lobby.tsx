@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { TypeCodeBlock } from '../../utils/type';
 import { capitalize } from '../../utils/utils';
 import codeblockService from '../../services/codeblockService';
-
 import './Lobby.css';
 
 function Lobby() {

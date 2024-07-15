@@ -44,29 +44,34 @@ function CodeBlock() {
 
     socket.onopen = () => {
       console.log('WebSocket Client Connected');
-      // Send any pending messages
       pendingMessagesRef.current.forEach((message) => socket.send(message));
       pendingMessagesRef.current = [];
     };
 
     socket.onmessage = (event) => {
+
       const message = JSON.parse(event.data);
       
+
+      // Update current code if user_message is received
       if (message.user_message !== undefined) {
         setCurrentCode(message.user_message)
       }
 
+      // Set case solved if success_message is received
       if (message.success_message != undefined){
           setCaseSolved(true)
       }
 
+      // Update user count if user_count is received
       if (message.user_count !== undefined) {
         setUserCount(message.user_count);
       }
 
+      // Set role to teacher if is the first user
       if (message.user_count === 1) {
         setRole('teacher');
-        socket.send('close');
+        socket.send('close'); // When the teacher leaves, the WebSocket will send a message to the other students in the room.
       }
 
       if (message.message === 'close') {
@@ -84,6 +89,8 @@ function CodeBlock() {
     };
   }, [id]);
 
+
+  // Handle code changes in the editor
   const handleCodeChange = (newCode: string) => {
     if (socketRef.current && socketRef.current.readyState === WebSocket.OPEN) {
       socketRef.current.send(newCode);

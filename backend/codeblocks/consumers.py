@@ -35,12 +35,12 @@ class ChatConsumer(WebsocketConsumer):
             self.channel_name
         )
 
-        if self.last_message == 'close':
+        if self.last_message == 'close': # teacher exit the room
             async_to_sync(self.channel_layer.group_send)(
             self.group_name,
             {
-                'type': 'redirect_user',
-                'message': 'close'
+                'type': 'redirect_user', # redirect_user is the function below
+                'message': 'close' # message is the parameter
             }
         )
 
@@ -71,8 +71,8 @@ class ChatConsumer(WebsocketConsumer):
             async_to_sync(self.channel_layer.group_send)(
             self.group_name,
             {
-                'type': 'send_success_message',
-                'success_message': 'success'
+                'type': 'send_success_message', # send_success_message is the function below
+                'success_message': 'success' # success_message is the parameter
             }
         )
 
